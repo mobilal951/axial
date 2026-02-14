@@ -19,7 +19,15 @@
       "Bash(xargs:*)",
       "Bash(node -e:*)",
       "Bash(gh auth status:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(where:*)",
+      "Bash(npx vercel:*)",
+      "Bash(vercel:*)",
+      "Bash(gh repo list:*)",
+      "Bash(node:*)",
+      "Bash(git push:*)"
     ]
   }
 }

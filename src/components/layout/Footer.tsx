@@ -35,8 +35,28 @@ export function Footer() {
           ))}
         </nav>
 
+        {/* Contact details */}
+        <div className="mt-10 flex flex-col items-center gap-2 text-[13px] text-parchment/50 tracking-wide">
+          <p>918 Dundas St E, Suite 301, Mississauga, ON L4Y 4H9</p>
+          <div className="flex items-center gap-3">
+            <a
+              href="mailto:info@axialaccounting.com"
+              className="hover:text-gold transition-colors duration-200"
+            >
+              info@axialaccounting.com
+            </a>
+            <span className="text-gold/40">·</span>
+            <a
+              href="tel:+14374768079"
+              className="hover:text-gold transition-colors duration-200"
+            >
+              (437) 476-8079
+            </a>
+          </div>
+        </div>
+
         {/* Copyright */}
-        <div className="mt-10 flex flex-col items-center gap-3">
+        <div className="mt-8 flex flex-col items-center gap-3">
           <p className="text-[13px] text-slate tracking-wide">
             &copy; {year} Axial Accounting. All rights reserved.
           </p>

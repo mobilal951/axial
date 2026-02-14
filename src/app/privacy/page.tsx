@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Questions regarding this privacy policy may be directed to
-              contact@axialaccounting.com.
+              info@axialaccounting.com.
             </p>
           </div>
         </Container>
