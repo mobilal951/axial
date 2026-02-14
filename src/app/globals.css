@@ -18,14 +18,6 @@
   --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
   --font-serif: var(--font-cormorant), Georgia, serif;
 
-  /* Custom spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-18: 4.5rem;
-  --spacing-22: 5.5rem;
-  --spacing-26: 6.5rem;
-  --spacing-30: 7.5rem;
-  --spacing-35: 8.75rem;
-
   /* Easing */
   --ease-precision: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-enter: cubic-bezier(0, 0, 0.2, 1);

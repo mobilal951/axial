@@ -27,11 +27,11 @@ export function ServiceIndex() {
                   {service.name}
                 </h3>
 
-                <p className="text-[0.9375rem] text-slate leading-relaxed md:text-right max-w-sm shrink-0 hidden md:block">
+                <p className="text-[0.9375rem] text-slate leading-relaxed md:text-right max-w-sm shrink-0 hidden lg:block">
                   {service.shortDescription}
                 </p>
 
-                <span className="text-gold opacity-60 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-200 shrink-0">
+                <span className="text-gold opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 shrink-0">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M5 10h10M11 6l4 4-4 4" />
                   </svg>

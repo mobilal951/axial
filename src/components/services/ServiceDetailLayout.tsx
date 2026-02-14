@@ -89,10 +89,10 @@ export function ServiceDetailLayout({ service }: ServiceDetailLayoutProps) {
           <ScrollReveal>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-gold text-[1.125rem] tracking-wide hover:gap-3 transition-all duration-200"
+              className="group inline-flex items-center gap-2 text-gold text-[1.125rem] tracking-wide transition-all duration-200"
             >
               Discuss this with the firm
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:translate-x-1 transition-transform duration-200">
                 <path d="M4 8h8M9 5l3 3-3 3" />
               </svg>
             </Link>

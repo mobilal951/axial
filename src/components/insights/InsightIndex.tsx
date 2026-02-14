@@ -40,6 +40,11 @@ export function InsightIndex() {
 
         {/* Insight list */}
         <div className="flex flex-col">
+          {filtered.length === 0 && (
+            <p className="py-12 text-center text-slate text-[0.9375rem]">
+              No articles in this category yet. Check back soon.
+            </p>
+          )}
           {filtered.map((insight, i) => (
             <ScrollReveal key={insight.slug} delay={i * 60}>
               <Link

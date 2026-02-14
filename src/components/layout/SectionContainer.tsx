@@ -19,7 +19,7 @@ const bgMap = {
 const spacingMap = {
   default: "py-24 md:py-32 lg:py-40",
   compact: "py-16 md:py-20 lg:py-24",
-  hero: "py-24 md:py-40 lg:py-0 lg:min-h-screen lg:flex lg:items-center",
+  hero: "py-24 md:py-40 lg:py-0 lg:min-h-screen lg:max-h-[900px] lg:flex lg:items-center",
 };
 
 export function SectionContainer({

@@ -3,7 +3,6 @@
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Container } from "@/components/primitives/Container";
 import { ScrollReveal } from "@/components/primitives/ScrollReveal";
-import { AxialLogo } from "@/components/primitives/AxialLogo";
 
 export function ContactAssurance() {
   return (
@@ -16,11 +15,6 @@ export function ContactAssurance() {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal delay={80}>
-          <div className="flex justify-center">
-            <AxialLogo variant="monogram" color="gold" className="!w-10 !h-10 opacity-40" />
-          </div>
-        </ScrollReveal>
       </Container>
     </SectionContainer>
   );

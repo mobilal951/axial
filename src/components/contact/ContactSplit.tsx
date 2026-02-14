@@ -10,7 +10,7 @@ export function ContactSplit() {
     <SectionContainer background="parchment">
       <Container width="standard">
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-10 lg:gap-24">
-          {/* Left — Firm details + Map */}
+          {/* Left — Firm details */}
           <div className="flex flex-col gap-10">
             <ScrollReveal>
               <div>
@@ -60,7 +60,7 @@ export function ContactSplit() {
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
-              <div className="overflow-hidden rounded-sm border border-border-light aspect-[4/3] max-h-[280px] lg:max-h-none">
+              <div className="overflow-hidden rounded-sm border border-border-light aspect-[16/9] max-h-[220px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.123!2d-79.5928!3d43.5988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b471ae4a4f5e1%3A0x0!2s918+Dundas+St+E%2C+Mississauga%2C+ON+L4Y+4H9!5e0!3m2!1sen!2sca!4v1700000000000"
                   width="100%"
@@ -78,6 +78,9 @@ export function ContactSplit() {
 
           {/* Right — Contact form */}
           <ScrollReveal delay={80}>
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold mb-8">
+              Send an Inquiry
+            </p>
             <ContactForm />
           </ScrollReveal>
         </div>

@@ -68,4 +68,4 @@ export function getAllInsightSlugs(): string[] {
   return insights.map((i) => i.slug);
 }
 
-export const categories = ["All", "Tax", "Advisory", "Business", "Regulatory"] as const;
+export const categories = ["All", "Tax", "Advisory", "Business"] as const;
