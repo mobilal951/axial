@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceDetailLayout } from "@/components/services/ServiceDetailLayout";
 import { getServiceBySlug, getAllServiceSlugs } from "@/data/services";
+import { buildMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -16,10 +17,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
-  return {
-    title: `${service.name} · Axial Accounting`,
+  return buildMetadata({
+    title: service.name,
     description: service.shortDescription,
-  };
+    path: `/services/${slug}`,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {

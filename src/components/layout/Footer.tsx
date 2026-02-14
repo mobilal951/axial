@@ -36,16 +36,16 @@ export function Footer() {
         </nav>
 
         {/* Contact details */}
-        <div className="mt-10 flex flex-col items-center gap-2 text-[13px] text-parchment/50 tracking-wide">
-          <p>918 Dundas St E, Suite 301, Mississauga, ON L4Y 4H9</p>
-          <div className="flex items-center gap-3">
+        <div className="mt-10 flex flex-col items-center gap-2 text-[12px] md:text-[13px] text-parchment/50 tracking-wide">
+          <p className="text-center">918 Dundas St E, Suite 301, Mississauga, ON L4Y 4H9</p>
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
             <a
               href="mailto:info@axialaccounting.com"
               className="hover:text-gold transition-colors duration-200"
             >
               info@axialaccounting.com
             </a>
-            <span className="text-gold/40">·</span>
+            <span className="text-gold/40 hidden sm:inline">·</span>
             <a
               href="tel:+14374768079"
               className="hover:text-gold transition-colors duration-200"

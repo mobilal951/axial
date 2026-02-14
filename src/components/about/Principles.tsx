@@ -30,11 +30,11 @@ export function Principles() {
           </p>
         </ScrollReveal>
 
-        <div className="space-y-16">
+        <div className="space-y-10 md:space-y-16">
           {principles.map((principle, i) => (
             <ScrollReveal key={principle.name} delay={i * 100}>
               <div>
-                <h3 className="text-[1.5rem] font-medium tracking-[0.015em] leading-[1.3] text-obsidian">
+                <h3 className="text-[1.25rem] md:text-[1.5rem] font-medium tracking-[0.015em] leading-[1.3] text-obsidian">
                   {principle.name}
                 </h3>
                 <GoldRule width="40px" animate delay={0.3} className="mt-4 mb-6" />

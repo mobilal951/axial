@@ -12,16 +12,19 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  // Close mobile nav on route change
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -37,7 +40,7 @@ export function Navigation() {
           scrolled && "border-b border-border-dark"
         )}
       >
-        <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex items-center justify-between h-[72px] md:h-[72px]">
+        <div className="mx-auto max-w-[1280px] px-6 md:px-12 flex items-center justify-between h-[60px] md:h-[72px]">
           <Link href="/" aria-label="Axial Accounting — Home">
             <AxialLogo variant="full" color="gold" />
           </Link>

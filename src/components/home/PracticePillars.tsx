@@ -10,7 +10,7 @@ export function PracticePillars() {
   return (
     <SectionContainer background="parchment">
       <Container width="standard">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-20 items-start">
           {/* Left — Pillars along vertical axis */}
           <ScrollReveal>
             <div className="flex items-start gap-6">

@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/primitives/ScrollReveal";
 
 export function InsightsHeader() {
   return (
-    <SectionContainer background="parchment" spacing="compact" className="pt-40 md:pt-48 pb-8">
+    <SectionContainer background="parchment" spacing="compact" className="pt-28 md:pt-48 pb-8">
       <Container width="narrow">
         <ScrollReveal>
           <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold mb-8">

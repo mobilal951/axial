@@ -20,11 +20,12 @@ export function InsightIndex() {
       <Container width="standard">
         {/* Category filter */}
         <ScrollReveal>
-          <div className="flex flex-wrap gap-6 mb-12">
+          <div className="flex flex-wrap gap-3 md:gap-6 mb-10 md:mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
                 className={`text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 pb-1 border-b-2 ${
                   activeCategory === cat
                     ? "text-gold border-gold"

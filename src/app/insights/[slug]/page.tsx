@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { InsightArticleLayout } from "@/components/insights/InsightArticleLayout";
 import { getInsightBySlug, getAllInsightSlugs } from "@/data/insights";
+import { buildMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -16,10 +17,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const insight = getInsightBySlug(slug);
   if (!insight) return {};
 
-  return {
-    title: `${insight.title} · Axial Accounting`,
+  return buildMetadata({
+    title: insight.title,
     description: insight.excerpt,
-  };
+    path: `/insights/${slug}`,
+  });
 }
 
 export default async function InsightArticlePage({ params }: PageProps) {

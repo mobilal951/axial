@@ -5,6 +5,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Container } from "@/components/primitives/Container";
 import { ScrollReveal } from "@/components/primitives/ScrollReveal";
 import { GoldRule } from "@/components/primitives/GoldRule";
+import { JsonLd } from "@/components/primitives/JsonLd";
 import type { Insight } from "@/data/insights";
 
 interface InsightArticleLayoutProps {
@@ -19,8 +20,27 @@ export function InsightArticleLayout({ insight }: InsightArticleLayoutProps) {
   });
 
   return (
-    <main>
-      <SectionContainer background="parchment" spacing="default" className="pt-40 md:pt-48">
+    <main id="main-content">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: insight.title,
+          description: insight.excerpt,
+          datePublished: insight.date,
+          author: {
+            "@type": "Person",
+            name: "Stephen Douglas Thompson",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Axial Accounting",
+            url: "https://axialaccounting.com",
+          },
+        }}
+      />
+      <article>
+      <SectionContainer background="parchment" spacing="default" className="pt-28 md:pt-48">
         <Container width="narrow">
           <ScrollReveal>
             <div className="flex items-center gap-4 mb-8">
@@ -69,6 +89,7 @@ export function InsightArticleLayout({ insight }: InsightArticleLayoutProps) {
           </div>
         </Container>
       </SectionContainer>
+      </article>
     </main>
   );
 }

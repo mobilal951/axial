@@ -14,13 +14,22 @@ const subjects = [
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setErrorMessage("");
     setSubmitting(true);
 
+    const apiKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+    if (!apiKey) {
+      setErrorMessage("Contact form is not configured. Please email us directly at info@axialaccounting.com.");
+      setSubmitting(false);
+      return;
+    }
+
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "");
+    formData.append("access_key", apiKey);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -31,13 +40,18 @@ export function ContactForm() {
       if (data.success) {
         setSubmitted(true);
       } else {
-        alert("Something went wrong. Please try again.");
+        setErrorMessage("Something went wrong. Please try again.");
       }
     } catch {
-      alert("Network error. Please try again.");
+      setErrorMessage("Network error. Please check your connection and try again.");
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function handleReset() {
+    setSubmitted(false);
+    setErrorMessage("");
   }
 
   if (submitted) {
@@ -50,12 +64,24 @@ export function ContactForm() {
           The Managing Partner will review your inquiry and respond within two
           business days.
         </p>
+        <button
+          onClick={handleReset}
+          className="mt-4 text-gold text-[0.9375rem] tracking-wide hover:text-gold-muted transition-colors duration-200"
+        >
+          Send another message
+        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+      {errorMessage && (
+        <div role="alert" className="text-[0.9375rem] text-red-700 bg-red-50 border border-red-200 rounded px-4 py-3">
+          {errorMessage}
+        </div>
+      )}
+
       {/* Name */}
       <div>
         <label

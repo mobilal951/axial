@@ -6,6 +6,7 @@ import { Container } from "@/components/primitives/Container";
 import { ScrollReveal } from "@/components/primitives/ScrollReveal";
 import { GoldRule } from "@/components/primitives/GoldRule";
 import { ServiceCallout } from "./ServiceCallout";
+import { JsonLd } from "@/components/primitives/JsonLd";
 import type { Service } from "@/data/services";
 
 interface ServiceDetailLayoutProps {
@@ -14,9 +15,22 @@ interface ServiceDetailLayoutProps {
 
 export function ServiceDetailLayout({ service }: ServiceDetailLayoutProps) {
   return (
-    <main>
+    <main id="main-content">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.name,
+          description: service.shortDescription,
+          provider: {
+            "@type": "AccountingService",
+            name: "Axial Accounting",
+            url: "https://axialaccounting.com",
+          },
+        }}
+      />
       {/* Header */}
-      <SectionContainer background="parchment" spacing="default" className="pt-40 md:pt-48">
+      <SectionContainer background="parchment" spacing="default" className="pt-28 md:pt-48">
         <Container width="narrow">
           <ScrollReveal>
             <Link
@@ -52,7 +66,7 @@ export function ServiceDetailLayout({ service }: ServiceDetailLayoutProps) {
             {service.focusAreas.map((area, i) => (
               <ScrollReveal key={area.title} delay={i * 60}>
                 <div>
-                  <h3 className="text-[1.5rem] font-medium tracking-[0.015em] leading-[1.3] text-obsidian">
+                  <h3 className="text-[1.25rem] md:text-[1.5rem] font-medium tracking-[0.015em] leading-[1.3] text-obsidian">
                     {area.title}
                   </h3>
                   <GoldRule width="40px" delay={0.3} className="mt-3 mb-5" />

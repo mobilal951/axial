@@ -7,7 +7,7 @@ import { ClosingStatement } from "@/components/home/ClosingStatement";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <HeroThreshold />
       <PracticePillars />
       <ServiceIndex />

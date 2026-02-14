@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { ContactInvitation } from "@/components/contact/ContactInvitation";
 import { ContactSplit } from "@/components/contact/ContactSplit";
 import { ContactAssurance } from "@/components/contact/ContactAssurance";
 
-export const metadata: Metadata = {
-  title: "Contact · Axial Accounting",
+export const metadata = buildMetadata({
+  title: "Contact",
   description:
     "Begin a conversation with Axial Accounting. Strategic accounting and advisory services in Ontario, Canada.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
-    <main>
+    <main id="main-content">
       <ContactInvitation />
       <ContactSplit />
       <ContactAssurance />

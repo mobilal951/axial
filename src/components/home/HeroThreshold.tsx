@@ -9,7 +9,7 @@ export function HeroThreshold() {
     <SectionContainer background="obsidian" spacing="hero">
       <Container width="standard" className="flex flex-col items-center text-center">
         <motion.h1
-          className="font-sans font-light text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-[0.04em] text-parchment"
+          className="font-sans font-light text-[clamp(1.75rem,5vw,4.5rem)] leading-[1.05] tracking-[0.04em] text-parchment"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

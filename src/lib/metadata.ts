@@ -10,36 +10,53 @@ export const siteMetadata = {
   locale: "en_CA",
 };
 
-export function buildMetadata(overrides: Metadata = {}): Metadata {
-  const title = overrides.title
-    ? `${overrides.title} · Axial Accounting`
+export function buildMetadata(
+  overrides: Metadata & { path?: string } = {}
+): Metadata {
+  const { path, ...rest } = overrides;
+  const title = rest.title
+    ? `${rest.title} · Axial Accounting`
     : "Axial Accounting · Strategic Accounting & Advisory";
 
   const description =
-    (overrides.description as string) || siteMetadata.description;
+    (rest.description as string) || siteMetadata.description;
+
+  const canonical = path ? `${siteUrl}${path}` : siteUrl;
 
   return {
     title,
     description,
     metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical,
+    },
     openGraph: {
       siteName: siteMetadata.name,
       locale: siteMetadata.locale,
       type: "website",
       title,
       description,
-      url: siteUrl,
-      ...((overrides.openGraph as object) || {}),
+      url: canonical,
+      images: [
+        {
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Axial Accounting — Strategic Accounting & Advisory",
+        },
+      ],
+      ...((rest.openGraph as object) || {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`${siteUrl}/og-image.png`],
     },
     robots: {
       index: true,
       follow: true,
     },
-    ...overrides,
+    ...rest,
   };
 }

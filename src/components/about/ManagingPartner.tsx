@@ -16,9 +16,9 @@ export function ManagingPartner() {
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
-              <p className="font-serif text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-[1.25] tracking-[0.01em] text-parchment">
+              <h2 className="font-serif text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-[1.25] tracking-[0.01em] text-parchment">
                 Stephen Douglas Thompson
-              </p>
+              </h2>
               <p className="mt-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-gold">
                 CPA, CA
               </p>
@@ -73,7 +73,7 @@ export function ManagingPartner() {
             <ScrollReveal delay={520}>
               <div className="mt-12 pt-8 border-t border-border-dark space-y-3">
                 <div className="flex flex-col sm:flex-row sm:gap-6">
-                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold w-32 shrink-0">
+                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold sm:w-32 shrink-0">
                     Designations
                   </span>
                   <span className="text-[0.9375rem] text-parchment/70">
@@ -81,7 +81,7 @@ export function ManagingPartner() {
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:gap-6">
-                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold w-32 shrink-0">
+                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold sm:w-32 shrink-0">
                     Licensing
                   </span>
                   <span className="text-[0.9375rem] text-parchment/70">
@@ -89,7 +89,7 @@ export function ManagingPartner() {
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:gap-6">
-                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold w-32 shrink-0">
+                  <span className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold sm:w-32 shrink-0">
                     Focus Areas
                   </span>
                   <span className="text-[0.9375rem] text-parchment/70">

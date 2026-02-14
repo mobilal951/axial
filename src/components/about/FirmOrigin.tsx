@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/primitives/ScrollReveal";
 
 export function FirmOrigin() {
   return (
-    <SectionContainer background="parchment" spacing="default" className="pt-40 md:pt-48">
+    <SectionContainer background="parchment" spacing="default" className="pt-28 md:pt-48">
       <Container width="narrow">
         <ScrollReveal>
           <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold mb-8">

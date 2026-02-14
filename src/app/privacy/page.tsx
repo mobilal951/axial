@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { SectionContainer } from "@/components/layout/SectionContainer";
 import { Container } from "@/components/primitives/Container";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy · Axial Accounting",
+export const metadata = buildMetadata({
+  title: "Privacy Policy",
   description: "Privacy policy for Axial Accounting.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
-    <main>
-      <SectionContainer background="parchment" spacing="default" className="pt-40 md:pt-48">
+    <main id="main-content">
+      <SectionContainer background="parchment" spacing="default" className="pt-28 md:pt-48">
         <Container width="narrow">
           <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-gold mb-8">
             Legal
