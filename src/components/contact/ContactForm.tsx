@@ -21,7 +21,7 @@ export function ContactForm() {
     setErrorMessage("");
     setSubmitting(true);
 
-    const apiKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+    const apiKey = (process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "").trim();
     if (!apiKey) {
       setErrorMessage("Contact form is not configured. Please email us directly at info@axialaccounting.com.");
       setSubmitting(false);
